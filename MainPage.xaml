@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUICatchMe.MainPage">
+	<Grid RowDefinitions="Auto,*,Auto,Auto" Margin="5">
+		<Label Text="Catch me!" HorizontalTextAlignment="Center"
+			 VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" 
+			Margin="10" x:Name="llCaption" Grid.Row="0"/>
+		<AbsoluteLayout BackgroundColor="Cyan" Grid.Row="1"
+			x:Name="alPlayground">
+			<AbsoluteLayout.GestureRecognizers>
+				<TapGestureRecognizer Tapped="alPlayground_Tapped" 
+					NumberOfTapsRequired="1"/>
+			</AbsoluteLayout.GestureRecognizers>
+			<ImageButton x:Name="ibCasper" AbsoluteLayout.LayoutBounds="200,200,50,50" 
+				Clicked="ibCasper_Clicked" Source="casper.png"
+				 BackgroundColor="Cyan"/>
+		</AbsoluteLayout>
+		<StackLayout Orientation="Horizontal" Grid.Row="2">
+			<Label Text="Hits: "/>
+			<Label Text="0" x:Name="llHits" Margin="0,0,10,0"/>
+			<Label Text="Misses: " />
+			<Label Text="0" x:Name="llMisses" Margin="0,0,10,0"/>
+			<Label Text="Still time:" Margin="0,0,5,0" />
+			<Label Text="{Binding Source={x:Reference slTime}, Path=Value, StringFormat='{0:F0} ms' }"/>
+			<Slider x:Name="slTime"  Maximum="3000" 		Minimum="150" Value="2000" ValueChanged="slTime_ValueChanged" WidthRequest="150"/>
+		</StackLayout>
+		<Grid Grid.Row="3">
+			<Button x:Name="btStart" Text="Start" HorizontalOptions="Start" 
+				Clicked="btStart_Clicked"/>
+			
+			<Button x:Name="btReset" Text="Reset" HorizontalOptions="Center" 
+				Clicked="btReset_Clicked"/>
+			
+			<Button x:Name="btStop" Text="Stop" HorizontalOptions="End" 
+				Clicked="btStop_Clicked"/>
+		</Grid>
+	</Grid>
+</ContentPage>
