@@ -4,7 +4,7 @@
              x:Class="MAUICatchMe.MainPage">
 	<Grid RowDefinitions="Auto,*,Auto,Auto" Margin="5">
 		<Label Text="Catch me!" HorizontalTextAlignment="Center"
-			 VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" 
+			 VerticalOptions="Start" FontSize="18" FontAttributes="Bold" 
 			Margin="10" x:Name="llCaption" Grid.Row="0"/>
 		<AbsoluteLayout BackgroundColor="Cyan" Grid.Row="1"
 			x:Name="alPlayground">
@@ -16,15 +16,15 @@
 				Clicked="ibCasper_Clicked" Source="casper.png"
 				 BackgroundColor="Cyan"/>
 		</AbsoluteLayout>
-		<StackLayout Orientation="Horizontal" Grid.Row="2">
+		<HorizontalStackLayout Grid.Row="2">
 			<Label Text="Hits: "/>
 			<Label Text="0" x:Name="llHits" Margin="0,0,10,0"/>
 			<Label Text="Misses: " />
 			<Label Text="0" x:Name="llMisses" Margin="0,0,10,0"/>
 			<Label Text="Still time:" Margin="0,0,5,0" />
-			<Label Text="{Binding Source={x:Reference slTime}, Path=Value, StringFormat='{0:F0} ms' }"/>
+			<Label x:DataType="Slider" Text="{Binding Source={x:Reference slTime}, Path=Value, StringFormat='{0:F0} ms'}"/>
 			<Slider x:Name="slTime"  Maximum="3000" 		Minimum="150" Value="2000" ValueChanged="slTime_ValueChanged" WidthRequest="150"/>
-		</StackLayout>
+		</HorizontalStackLayout>
 		<Grid Grid.Row="3">
 			<Button x:Name="btStart" Text="Start" HorizontalOptions="Start" 
 				Clicked="btStart_Clicked"/>
