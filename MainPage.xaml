@@ -25,15 +25,15 @@
 			<Label x:DataType="Slider" Text="{Binding Source={x:Reference slTime}, Path=Value, StringFormat='{0:F0} ms'}"/>
 			<Slider x:Name="slTime"  Maximum="3000" 		Minimum="150" Value="2000" ValueChanged="slTime_ValueChanged" WidthRequest="150"/>
 		</HorizontalStackLayout>
-		<Grid Grid.Row="3">
+		<Grid Grid.Row="3" ColumnDefinitions="*,*,*">
 			<Button x:Name="btStart" Text="Start" HorizontalOptions="Start" 
-				Clicked="btStart_Clicked"/>
+				Clicked="btStart_Clicked" />
 			
 			<Button x:Name="btReset" Text="Reset" HorizontalOptions="Center" 
-				Clicked="btReset_Clicked"/>
+				Clicked="btReset_Clicked" Grid.Column="1"/>
 			
 			<Button x:Name="btStop" Text="Stop" HorizontalOptions="End" 
-				Clicked="btStop_Clicked"/>
+				Clicked="btStop_Clicked" Grid.Column="2"/>
 		</Grid>
 	</Grid>
 </ContentPage>
