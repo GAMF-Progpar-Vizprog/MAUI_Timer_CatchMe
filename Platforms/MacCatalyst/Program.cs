@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MAUICatchMe;
+namespace MAUI_Timer_CatchMe;
 
 public class Program
 {

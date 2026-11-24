@@ -1,7 +1,7 @@
 ﻿using Foundation;
 using Microsoft.Maui;
 
-namespace MAUICatchMe;
+namespace MAUI_Timer_CatchMe;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

@@ -1,4 +1,4 @@
-﻿namespace MAUICatchMe;
+﻿namespace MAUI_Timer_CatchMe;
 
 public static class MauiProgram
 {
